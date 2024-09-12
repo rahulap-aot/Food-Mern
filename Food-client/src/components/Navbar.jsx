@@ -1,9 +1,11 @@
 import React from "react";
+import logo from "../assets/logo.png";
+import { PiPhoneCall } from "react-icons/pi";
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <header className="max-w-screen-2xl container mx-auto ">
+      <div className="navbar xl:px-24">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,36 +47,57 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">{logo}</a>
+          <a href="/">
+            <img src={logo} alt="logo" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <a>Home</a>
             </li>
             <li>
               <details>
-                <summary>Parent</summary>
+                <summary>Menu</summary>
                 <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
+                <li>
+                    <a>All</a>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <a>Salad</a>
+                  </li>
+                  <li>
+                    <a>Pizza</a>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <a>Item 3</a>
+              <details>
+                <summary>Services</summary>
+                <ul className="p-2">
+                <li>
+                    <a>Online Order</a>
+                  </li>
+                  <li>
+                    <a>Table Booking</a>
+                  </li>
+                  <li>
+                    <a>Order Tracking</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a>Offers</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn"><PiPhoneCall /> Contact</a>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
